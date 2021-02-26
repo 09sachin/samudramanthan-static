@@ -117,7 +117,7 @@ h6 {
 #header {
   padding: 30px 0;
   height: 92px;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   right: 0;
@@ -378,6 +378,7 @@ h6 {
   font-size: 13px;
   text-transform: uppercase;
   outline: none;
+  font-weight: bold;
 }
 
 .nav-menu li:hover > a,
