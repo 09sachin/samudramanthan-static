@@ -126,11 +126,11 @@ h6 {
 }
 
 #header.header-scrolled {
-  background: white;
+  background: #18d26e;
   padding: 20px 0;
   height: 72px;
   transition: all 0.5s;
-  border-bottom: 1px solid black;
+  
 }
 
 #header #logo {
@@ -384,7 +384,7 @@ h6 {
 
 .nav-menu li:hover > a,
 .nav-menu > .menu-active > a {
-  color: #18d26e;
+  color: white;
 }
 
 .nav-menu > li {
