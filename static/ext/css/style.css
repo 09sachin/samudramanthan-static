@@ -130,6 +130,7 @@ h6 {
   padding: 20px 0;
   height: 72px;
   transition: all 0.5s;
+  border-bottom: 1px solid black;
 }
 
 #header #logo {
@@ -378,6 +379,7 @@ h6 {
   font-size: 13px;
   text-transform: uppercase;
   outline: none;
+  font-weight: bold;
 }
 
 .nav-menu li:hover > a,
