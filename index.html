@@ -387,6 +387,56 @@
       -webkit-animation-name: zoomIn;
       animation-name: zoomIn;
     }
+
+    .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-card-back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flip-card-back>p{
+  padding:10px;
+
+}
   </style>
 
   <!-- Google Fonts -->
@@ -768,10 +818,23 @@
                 <img style="width:300px; " src="static/cicmt.png">
               </div>
             </div> -->
+
         <div style="padding-bottom: 80px; margin-left: auto; margin-right: auto;width: 100%  " class=" wow zoomInUp" data-wow-duration="1.4s">
           <h2 style="text-align: center;color: black;font-weight: bolder;">Title Sponsor</h2>
           <div style="margin-left: auto;margin-right: auto;display: table;">
-            <a href='https://www.quantsolar.com/'> <img style="width:282px; " src="media/quant.png"></a>
+            <!-- <a href='https://www.quantsolar.com/'> <img style="width:282px; " src="media/quant.png"></a> -->
+            <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="media/quant.png" alt="Avatar" style="width:300px;height:auto;">
+    </div>
+    <div class="flip-card-back">
+       
+      <p>Quant solar is a clean-tech company that aims to develop innovative and smart technologies for a sustainable future.<br>Quant solar offer a safe and reliable solution that has been tested on international standards and guidelines of operability and safety.</p>
+      <button class="btn btn-success"  style="margin:10px auto;width: 70%"><a style="color: white" href='https://www.quantsolar.com/'>Know more</a></button>
+    </div>
+  </div>
+</div>
           </div>
         </div>
 
@@ -779,7 +842,20 @@
           <h2 style="text-align: center;color: black;font-weight: bolder;">Major Sponsor</h2>
 
           <div style="margin-left: auto;margin-right: auto;display: table;margin-top: 20px">
-            <a href='https://www.buoyancyconsultants.com/'><img style="width:282px; " src="media/spons/bouy.webp"></a>
+           <!--  <a href='https://www.buoyancyconsultants.com/'><img style="width:282px; " src="media/spons/bouy.webp"></a> 
+           -->
+             <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="media/spons/bouy.webp" alt="Avatar" style="width:300px;height:auto;">
+    </div>
+    <div class="flip-card-back">
+       
+      <p>Buoyancy Consultants approach to offshore & ship design is through providing quality engineering services for new builds, retrofits, Brownfield and Greenfield projects.</p>
+      <button class="btn btn-success"  style="margin:10px auto;width: 70%"><a style="color: white" href='https://www.buoyancyconsultants.com/'>Know more</a></button>
+    </div>
+  </div>
+</div>
           </div>
 
         </div>
@@ -787,11 +863,35 @@
         <div style="padding-bottom: 80px; margin-left: auto; margin-right: auto;width: 100%  " class=" wow zoomInUp" data-wow-duration="1.4s">
           <h2 style="text-align: center;color: black;font-weight: bolder;">Events Sponsor</h2>
           <div style="margin-left: auto;margin-right: auto;display: table;">
-            <a href='https://www.vedamdesign.com/'><img style="width:282px; " src="media/vedam.png"></a>
+           <!--  <a href='https://www.vedamdesign.com/'><img style="width:282px; " src="media/vedam.png"></a> -->
+             <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="media/vedam.png" alt="Avatar" style="width:300px;height:auto;">
+    </div>
+    <div class="flip-card-back">
+       
+      <p>Vedam is an ISO 9001:2015 company offering engineering and technical consulting services to the marine and offshore industry. Our ever-growing team of more than 140 Naval Architects, Marine Engineer, Engineers and designers operates from India, UAE and Netherlands. </p>
+      <button class="btn btn-success"  style="margin:10px auto;width: 70%"><a style="color: white" href='https://www.vedamdesign.com/'>Know more</a></button>
+    </div>
+  </div>
+</div>
           </div>
 
           <div style="margin-left: auto;margin-right: auto;display: table;margin-top: 80px">
-            <a href='https://www.mahindraodyssea.com/'><img style="width:282px; " src="media/spons/mo.png"></a>
+           <!--  <a href='https://www.mahindraodyssea.com/'><img style="width:282px; " src="media/spons/mo.png"></a> -->
+             <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="media/spons/mo.png" alt="Avatar" style="width:300px;height:auto;">
+    </div>
+    <div class="flip-card-back">
+       
+      <p>Mahindra Odyssea brings you the engineering might of the Mahindra Group with custom made boats built for speed, stability and safety. It is country leader of in-house, FRP boat building which go through several industry certified tests before delivery</p>
+      <button class="btn btn-success"  style="margin:10px auto;width: 70%"><a style="color: white" href='https://www.mahindraodyssea.com/'>Know more</a></button>
+    </div>
+  </div>
+</div>
           </div>
 
         </div>
