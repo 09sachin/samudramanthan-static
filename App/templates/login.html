@@ -19,13 +19,14 @@
 
 
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="../../static/login/images/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="{{url_for('static',filename='login/images/icons/favicon.ico')}}"/>
+    
 
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../../static/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='login/css/util.css')}}">
 
 
-	<link rel="stylesheet" type="text/css" href="../../static/login/css/main.css">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='login/css/main.css')}}">
 	<!--===============================================================================================-->
 </head>
 
@@ -36,7 +37,7 @@
 			<div class="wrap-login100 p-t-190 p-b-30">
 
 				<div class="login100-form-avatar">
-					<a href="../../index.html"> <img src="../../static/img/logo.jpg" alt="sm.logo"></a>
+					<a href="{{url_for('index')}}"> <img src="{{url_for('static',filename='img/logo.jpg')}}" alt="sm.logo"></a>
 				</div>
 
 				<span class="login100-form-title p-t-20 p-b-45">
@@ -45,14 +46,14 @@
 				<div class="container">
 					<h3 style="text-align: center;color: red">Registrations are disabled</h3>
 				</div>
-				<form method="post" action="#">
+				<form method="post" action="{{url_for('login')}}">
 					<input type="hidden" name="csrfmiddlewaretoken"
 						value="t62O8mZzpnFkXSTf9wByYk7mHn8jpHsXTzX0MR2TXZkZFIbHpysUElq1WyQxCZk6">
 
 
 					<div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
-							Username<span class="asteriskField">*</span> </label>
-						<div class=""> <input type="text" name="username" autofocus autocapitalize="none"
+							Email<span class="asteriskField">*</span> </label>
+						<div class=""> <input type="text" name="email" autofocus autocapitalize="none"
 								autocomplete="username" maxlength="150" class="textinput textInput form-control"
 								required id="id_username"> </div>
 					</div>
@@ -73,7 +74,7 @@
 
 					<div class="text-center w-full p-t-25 p-b-230">
 						<button class="login100-form-btn">
-							<a style="text-decoration: none;" href="../index.html" class="txt1">
+							<a style="text-decoration: none;" href="{{url_for('register')}}" class="txt1">
 								Create an account !
 							</a>
 						</button>
