@@ -1,81 +1,81 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.samudramanthan.in/register/login/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Apr 2020 19:28:08 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<html>
 <head>
-	<title>Login</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Page</title>
+   <!--Made with love by Mutiullah Samim -->
 
-     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="../../static/login/images/icons/favicon.ico"/>
-
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../../static/login/css/util.css">
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="../../static/login/css/main.css">
-<!--===============================================================================================-->
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
- 
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url(../../static/lib/bg4.jpg);">
-			<div class="wrap-login100 p-t-190 p-b-30">
-
-					<div class="login100-form-avatar">
-                        <a href="../../index.html"> <img src="../../static/img/logo.jpg" alt="sm.logo"></a>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sign In</h3>
+				<!-- <div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div> -->
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password">
 					</div>
 
-					<span class="login100-form-title p-t-20 p-b-45">
-						Samudramanthan
-					</span>
-					<div class="container">
-						<h3 style="text-align: center;color: red">Registrations are disabled</h3>
+					<!-- <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password">
+					</div> -->
+
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
 					</div>
-            <form method="post" action="#">
-                <input type="hidden" name="csrfmiddlewaretoken" value="t62O8mZzpnFkXSTf9wByYk7mHn8jpHsXTzX0MR2TXZkZFIbHpysUElq1WyQxCZk6">
-              
-
-<div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
-                Username<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" class="textinput textInput form-control" required id="id_username"> </div> </div> <div id="div_id_password" class="form-group"> <label for="id_password" class=" requiredField">
-                Password<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password" autocomplete="current-password" class="textinput textInput form-control" required id="id_password"> </div> </div>
-
-
-
-
-					<div class="container-login100-form-btn p-t-10">
-						<button class="login100-form-btn" type="submit">
-							Login
-						</button>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
-
-					<div class="text-center w-full p-t-25 p-b-230">
-					    <button class="login100-form-btn" >
-						<a style="text-decoration: none;" href="../index.html" class="txt1">
-							Create an account !
-						</a>
-						</button>
-					</div>
-
-</form>
-
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="#">Sign Up</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#">Forgot your password?</a>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-
-
+</div>
 </body>
-
-
-<!-- Mirrored from www.samudramanthan.in/register/login/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Apr 2020 19:28:36 GMT -->
 </html>
+
+
