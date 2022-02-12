@@ -13,7 +13,7 @@ def login():
     password=request.form.get("password")
     user=User.query.filter_by(email=email).first()
     if user:
-        if bcrypt.checkpw(password.encode("ascii"),user.password):
+        if bcrypt.checkpw(password.encode("ascii"),user.password.encode("ascii")):
             res=make_response(redirect(url_for("index")))
             token=JWT.tokenizer({"user":user.id})
             res.set_cookie("token",token,httponly=True)

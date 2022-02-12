@@ -449,13 +449,13 @@
   <!-- Libraries CSS Files -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-  <link href="static/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="{{url_for('static',filename='lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
   <!--<link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">-->
 
   <!-- Main Stylesheet File -->
-  <link href="static/ext/css/style.css" rel="stylesheet">
+  <link href="{{url_for('static',filename='ext/css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -507,15 +507,15 @@
       <div id="logo" class="pull-left" style="margin-top: -12px">
 
 
-        <a href="#intro"><img src="static/img/logo.png" alt="" title="" /></a>
+        <a href="#intro"><img src="{{url_for('static',filename='img/logo.png')}}" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-          <li><a href="events.html">Events</a>
+          <li><a href="{{url_for('index')}}">Home</a></li>
+          <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
+          <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
+          <li><a href="{{url_for('events')}}">Events</a></li>
             <!--             <div style='background: lightblue; border-radius: 15px;' class="dropdown-content"> -->
             <!-- <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal1">Data Tussle</a> -->
             <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal2">BeyondQ</a> -->
@@ -530,9 +530,11 @@
             <!--             </div> -->
           </li>
           <!-- <li><a href="https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=5e4e7545e4b0bf8415cfebe1" target="_blank">S2i2</a></li> -->
-          <li><a href="index.html#Our-sponsors" target="_blank">sponsors</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+  
+          <li><a href="{{url_for('index',_anchor='Our-sponsors')}}" target="_blank">sponsors</a></li>
+<!-- 
+          <li><a href="{{url_for('team')}}">Team</a></li>
+          <li><a href="{{url_for('gallery')}}">Gallery</a></li> -->
           <!-- <li><a class="menu-active" href="results/index.html"> Results </a></li> -->
 
           <li><a href="registration.html">
@@ -560,12 +562,12 @@
       <!--<img class="mySlides w3-animate-fading full-image-screen"  src="/static/lib/bg22.jpg" style="width:100%;height: 100vh;opacity: 0.5;">-->
       <!--<img class="mySlides w3-animate-fading full-image-screen"  src="/static/lib/bg32.jpg" style="width:100%;;opacity: 0.5;height: 100vh">-->
       <!--<img class="mySlides w3-animate-fading full-image-screen"  src="/static/lib/bg5.jpg" style="width:100%;;opacity: 0.5;height: 100vh">-->
-      <img class=" full-image-screen" src="static/new/desk_front.png" style="width:100%;;opacity: 0.8;height: 100vh">
+      <img class=" full-image-screen" src="{{url_for('static',filename='new/desk_front.png')}}" style="width:100%;;opacity: 0.8;height: 100vh">
       <div class="centered" style=' top:85%'>
         <div style="margin-left: 48%;width: fit-content;width: -moz-fit-content; margin-top: 7%;">
 
 
-          <a href='index.html#about'><img class='vibe' style='width:35%' src="static/an1.png"></a>
+          <a href='index.html#about'><img class='vibe' style='width:35%' src="{{url_for('static',filename='an1.png')}}"></a>
         </div>
 
       </div>
@@ -575,7 +577,7 @@
       <!--<img class="mySlides w3-animate-fading full-image-screen"  src="/static/lib/1.jpg" style="width:100%;height: 100vh;opacity: 0.5;">-->
       <!--<img class="mySlides w3-animate-fading full-image-screen"  src="/static/lib/10.jpg" style="width:100%;;opacity: 0.5;height: 100vh">-->
       <!--<img class="mySlides w3-animate-fading full-image-screen"  src="/static/lib/rm.jpg" style="width:100%;;opacity: 0.5;height: 100vh">-->
-      <img class=" full-image-screen" src="static/new/mobile_front.png" style="width:100%;;opacity: 0.8;height: 100vh">
+      <img class=" full-image-screen" src="{{url_for('static',filename='new/mobile_front.png')}}" style="width:100%;;opacity: 0.8;height: 100vh">
 
     </div>
     <!--<marquee style="z-index:10; position:absolute; left:15px;top:100px; font-family:Cursive;  margin-right: 20px; font-size:14pt; font-weight: bold; color:aqua; height:34px; " scrollamount="6"> Department of Ocean engineering and naval architecture, in association with CICMT and Sagarmala presents  12th edition of Samudramanthan from 6-8 March 2020</marquee>-->
@@ -826,7 +828,7 @@
             <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="media/quant.png" alt="Avatar" style="width:300px;height:auto;">
+      <img src="{{url_for('static',filename='media/quant.png')}}" alt="Avatar" style="width:300px;height:auto;">
     </div>
     <div class="flip-card-back">
 
@@ -847,7 +849,7 @@
              <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="media/spons/bouy.webp" alt="Avatar" style="width:300px;height:auto;">
+      <img src="{{url_for('static',filename='media/spons/bouy.webp')}}" alt="Avatar" style="width:300px;height:auto;">
     </div>
     <div class="flip-card-back">
 
@@ -867,7 +869,7 @@
              <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="media/vedam.png" alt="Avatar" style="width:300px;height:auto;">
+      <img src="{{url_for('static',filename='media/vedam.png')}}" alt="Avatar" style="width:300px;height:auto;">
     </div>
     <div class="flip-card-back">
 
@@ -883,7 +885,7 @@
              <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="media/spons/mo.png" alt="Avatar" style="width:300px;height:auto;">
+      <img src="{{url_for('static',filename='media/spons/mo.png')}}" alt="Avatar" style="width:300px;height:auto;">
     </div>
     <div class="flip-card-back">
 
@@ -913,71 +915,71 @@
   <!--==========================
       Clients Section
     ============================-->
-  <section id="clients" class="wow " style='background-color:white'>
+  <section id="clients" class="wow animated" style='background-color:white'>
     <div class="container">
 
       <header class="section-header">
         <h3>Previous Sponsors</h3>
       </header>
 
-      <div class="owl-carousel clients-carousel">
+      <div class="owl-carousel clients-carousel owl-loaded owl-drag">
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/shoftship_O8swTMT.png" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/shoftship_O8swTMT.png')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/IR-class.png" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/IR-class.png')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/21_knots.jpg" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/21_knots.jpg')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/download.png" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/download.png')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/download_1.png" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/download_1.png')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/download_2.png" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/download_2.png')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/download.jpg" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/download.jpg')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/download_3.png" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/download_3.png')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="media/download_4.png" alt="">
-        </span>
-
-
-
-
-
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="static/sagarmala.jpg" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='media/download_4.png')}}" alt="">
         </span>
 
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="static/cicmt.jpg" alt="">
+
+
+
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='sagarmala.jpg')}}" alt="">
         </span>
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="static/dnvgl.jpg" alt="">
+
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='cicmt.jpg')}}" alt="">
+        </span>
+
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='dnvgl.jpg')}}" alt="">
         </span>
 
 
-        <span>
-          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="static/download.png" alt="">
+        <span >
+          <img style="max-height: 150px; width: 150px; margin-left: 40px; margin-right: 40px" src="{{url_for('static',filename='download.png')}}" alt="">
         </span>
 
 
@@ -997,7 +999,7 @@
   <!--==========================
       Contact Section
     ============================-->
-  <section id="contact" class="section-bg wow" style="background: url(bg.jpg) no-repeat center center fixed;
+  <section id="contact" class="section-bg wow" style="background: url(../static/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1150,14 +1152,8 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="index.html">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="events.html">Events</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="sponsors.html">Sponsors</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="index.html#contact">Contact Us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="team.html">Our Team</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="gallery.html">Gallery</a></li>
-
-
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index')}}">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('events')}}">Events</a></li>
             </ul>
           </div>
 
@@ -1209,9 +1205,9 @@
   <!-- JavaScript Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-  <script src="static/lib/easing/easing.min.js"></script>
+  <!-- <script src="static/lib/easing/easing.min.js"></script> -->
 
-  <script src="static/lib/superfish/superfish.min.js"></script>
+  <!-- <script src="static/lib/superfish/superfish.min.js"></script>
   <script src="static/lib/wow/wow.min.js"></script>
 
   <script src="static/lib/waypoints/waypoints.min.js"></script>
@@ -1219,12 +1215,22 @@
   <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="static/lib/isotope/isotope.pkgd.min.js"></script>
   <script src="static/lib/lightbox/js/lightbox.min.js"></script>
-  <script src="static/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <script src="static/lib/touchSwipe/jquery.touchSwipe.min.js"></script> -->
   <!-- Contact Form JavaScript File -->
 
 
   <!-- Template Main Javascript File -->
-  <script src="static/ext/js/main.js"></script>
+  <script src="{{url_for('static',filename='lib/easing/easing.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/counterup/counterup.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/isotope/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/lightbox/js/lightbox.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/waypoints/waypoints.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/wow/wow.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static',filename='ext/js/main.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </body>
