@@ -14,6 +14,6 @@ def register():
         email=request.form["email"]
         password=request.form["password"]
         user=User(name=name,email=email,password=bcrypt.hashpw(password.encode("ascii"),bcrypt.gensalt()),paid=False)
-        db.session.add(User)
+        db.session.add(user)
         db.session.commit()
         return render_template("register.html")

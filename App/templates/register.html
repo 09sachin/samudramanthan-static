@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Log in</title>
+	<title>Sign Up</title>
 	<!-- CSS only -->
 <link rel="stylesheet" href="{{url_for('static',filename='css/form.css')}}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -19,7 +19,7 @@
 	 <div class="main">
 		<div class="col-md-6 col-sm-12">
 		   <div class="login-form">
-			  <form>
+			  <form method="post" action="{{url_for('register')}}">
           <div class="form-group">
             <label>Full name</label>
             <input id="username" type="text" class="form-control" placeholder="Full name" name="name">

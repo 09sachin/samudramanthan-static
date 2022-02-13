@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.samudramanthan.in/events by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Apr 2020 19:27:14 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+  <meta charset="utf-8">
+  <title>Events | Samudramanthan</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <meta name="google-site-verification" content="C2vTSxAcVCOasxCe_zQ6R8CfYsB0ehzOMwoZxoVliFA" />
+
+
+  <link href="{{url_for('static',filename='img/logo.png')}}" rel="icon">
+  <link href="{{url_for('static',filename='img/logo.png')}}" rel="apple-touch-icon">
+
+  <style>
+    .footer {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .footer--bg {
+      background-color: #27353B;
+    }
+
+    .footer__title {
+      font-size: 30px;
+      color: #fff;
+      font-family: Roboto-Light;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .footer__contact-information li {
+      display: inline-block;
+    }
+
+    .footer__contact-information li a {
+      font-size: 15px;
+      color: #9ca1a3;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 10px;
+    }
+
+    .footer__contact-information .material-icons {
+      font-size: 15px;
+      padding-right: 10px;
+      position: relative;
+      top: 3px;
+    }
+
+    .footer .social-icon {
+      margin-bottom: 20px;
+    }
+
+    .footer .social-icon ul li {
+      padding-right: 20px;
+      margin-top: 50px;
+    }
+
+    .footer__paragraph {
+      font-size: 14px;
+      color: #fff;
+      font-family: Roboto-Light;
+    }
+
+    .sm-logo-ending {
+      width: 270px;
+      height: 270px;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 1050px) {
+      .sm-logo-ending {
+        display: none;
+      }
+    }
+
+    .pop-overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 0ms;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 99;
+    }
+
+    .pop-overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      top: 10%;
+      background: #fff;
+      border-radius: 15px;
+      width: 35%;
+      position: relative;
+      margin: 3em auto;
+      padding-top: 2em;
+      padding-bottom: 0.05em;
+    }
+
+    @media screen and (max-width: 800px) {
+      .popup {
+        width: 90%;
+      }
+    }
+
+    @media screen and (max-width: 380px) {
+      .popup {
+        margin-top: 1em;
+        padding: 0.5em 0;
+      }
+
+    }
+
+    .popup p {
+      color: #666;
+      letter-spacing: 1px;
+      line-height: 20px;
+    }
+
+
+    .popup .close {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .popup {
+      color: #30c39e;
+    }
+
+    .close:hover {
+      color: #002a80;
+    }
+
+    .close {
+      float: right;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: black;
+      text-shadow: 0 1px 0 #fff;
+      opacity: 1;
+      background-color: #c4dce8;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      opacity: .75;
+    }
+
+    .close:not(:disabled):not(.disabled) {
+      cursor: pointer;
+    }
+
+    button.close {
+      padding: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-appearance: none;
+    }
+
+    @media screen and (max-width: 450px) {
+
+      .small-devices-h2 {
+        font-size: 19px;
+        font-weight: bolder;
+      }
+
+      .small-devices-div {
+        font-size: 13px;
+      }
+
+      .img-fluid {
+        margin-top: 20px;
+      }
+    }
+
+    .pm {
+      display: none;
+    }
+
+    .money:hover .pm {
+
+      width: -webkit-fill-available;
+      top: 50%;
+      color: black;
+      margin-top: 20%;
+      height: -webkit-fill-available;
+      position: absolute;
+      opacity: 1;
+      display: block;
+      text-align: center;
+      font-weight: bolder;
+
+    }
+  </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <!-- Libraries CSS Files -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="{{url_for('static',filename='lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <!-- <link href="{{url_for('static',filename='lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet"> -->
+  <!--<link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">-->
+
+  <!-- Main Stylesheet File -->
+  <link href="{{url_for('static',filename='ext/css/style.css')}}" rel="stylesheet">
+
+  <style>
+    .nav-menu li:hover>a,
+    .nav-menu>.menu-active>a {
+      color: navy;
+    }
+  </style>
+
+</head>
+
+<body style="background: url(static/new/pic_6.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; ">
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
+
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+
+
+        <a href="{{url_for('index')}}"><img src="{{url_for('static',filename='img/logo.png')}}" alt="" title="" /></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="{{url_for('index')}}">Home</a></li>
+          <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
+          <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
+          <li><a href="{{url_for('events')}}">Events</a></li>
+          <!-- <li><a href="https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=5e4e7545e4b0bf8415cfebe1" target="_blank">S2i2</a></li> -->
+          {% if user %}
+          <li><a href="{{url_for('logout')}}">Log out</a></li>
+          {% else %}
+          <li><a href="{{url_for('login')}}">Log in</a></li>
+          {%endif%}
+
+          <!-- <li><a href="{{url_for('team')}}">Team</a></li>
+          <li><a href="{{url_for('gallery')}}">Gallery</a></li> -->
+          <!-- <li><a class="menu-active" href="results/index.html"> Results </a></li> -->
+
+
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <main id="main">
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <!-- <section id="portfolio"  class="section-bg"  style="margin-top: 90px;background: #43cea2;
+background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
+background: linear-gradient(to right, #185a9d, #43cea2); "> -->
+    <section id="portfolio">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1
+              style="text-align: center; color: black; font-family: Helvetica,sans-serif; margin: 50px 0; font-weight: bolder; ">
+              OUR EVENTS</h1>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+        
+            {% for event in all_events%}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow zoomInUp">
+              <div class="portfolio-wrap" style="background-color: white;border-radius: 15px">
+                <figure class='money'>
+
+                  <img style=" margin-left: 30%; margin-right: 30%; width:40% ; margin-top: 20%"
+                    src="{{url_for('static',filename='img/events/'+event.image)}}" class="img-fluid" alt="">
+
+                  <div class="pm">Prizes worth INR {{event.prize}} </div>
+                </figure>
+
+                <div class="portfolio-info" style="border-radius: 0 0 15px 15px; border-top: black solid 1px ">
+                  <h4>
+                    <div style="margin-top: 10px; color: black; text-transform: capitalize"><a style="color:black"
+                        href="{{url_for('events',_anchor=event.id)}}">{{event.name}}</a></div>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  {% for event in all_events %}
+  <div id="{{event.id}}" class="pop-overlay">
+    <div class="popup " id="myDIV">
+      <img style="margin-left: 36%; margin-right: 36%; width:28%;"
+        src="{{url_for('static',filename='img/events/'+event.image)}}" alt="Popup Image" class="img-fluid" />
+      <h2 style="text-align: center;  margin: 10px 0 10px 0; text-transform: capitalize" class="small-devices-h2">
+        {{event.name}}</h2>
+      <div style="text-align: justify; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
+        {{event.description}}
+      </div>
+      <p style="text-align: center; margin-top:4vh; margin-bottom: 4vh; text-transform: uppercase;"
+        class="small-devices-div"><button class="btn btn-lg btn-success"><a style="color: #fff;"
+            href="files/Info Brochure_BeyondQ_SM21.pdf" target="_blank" rel="noopener noreferrer">Rules</a></button>
+
+            {%if user== None%}
+            <button class="btn btn-lg btn-success" disabled>Register</button>
+            <div style="text-align: justify; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
+              You need to login first to register for an event.
+            </div>
+            {% else %}
+            {% if user.paid== True %}
+            {%if event.id in participated%}
+            <button class="btn btn-lg btn-success" disabled>Register</button>
+            <div style="text-align: justify; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
+              Your participation is added.
+            </div>
+            {%else%}
+              <button class="btn btn-lg btn-success register"><a href="{{url_for('event_participation',event_id=event.id)}}" role="button"
+                style="color: #fff;">Register</a></button>
+            {%endif%}
+            {%else%}
+            <button class="btn btn-lg btn-success register" disabled>Register</button>
+            <div style="text-align: justify; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
+              Your payment hasn't been confirmed yet. If it's been more than 8 hours since you paid then you can contact us at:
+              <strong>naroes.iitkgp.2022@gmail.com</strong>
+            </div>
+            {%endif%}
+            {%endif%}
+      </p>
+      <a style="border:solid black; background-color: grey" class="close btn" href="#return2"> &minus;</a>
+    </div>
+  </div>
+  {%endfor%}
+
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index')}}">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('events')}}">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Department of <br>
+              Ocean Engineering & Naval Architecture <br>
+              IIT Kharagpur <br>
+              721302<br>
+              Kharagpur, West Bengal<br>
+
+              <strong>Email:</strong> <a href="mailto:samudramanthan.iitkgp.2022@gmail.com"
+                style="text-decoration: none;">samudramanthan.iitkgp.2022@gmail.com</a><br>
+            </p>
+
+            <div class="social-links">
+
+              <a href="https://www.facebook.com/samudramanthan.iitkgp" class="facebook"><i
+                  class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/samudramanthan.iitkgp" class="instagram"><i
+                  class="fa fa-instagram"></i></a>
+              <a href="mailto:samudramanthan.iitkgp.2022@gmail.com" class="google-plus"><i
+                  class="fa fa-envelope"></i></a>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Follow Us</h4>
+            <div class="fb-page" data-href="https://www.facebook.com/samudramanthan.iitkgp" data-width="380"
+              data-hide-cover="false" data-show-facepile="false"></div>
+          </div>
+          <!--<div class="col-lg-3 col-md-6">-->
+          <!--    <img class="sm-logo-ending"  src="/static/img/logo.jpg">-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>NAROES</strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+
+  <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  Uncomment below i you want to use a preloader
+  <div id="preloader"></div> -->
+
+  <script>
+
+
+  </script>
+
+
+  <!-- JavaScript Libraries -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>-->
+  <!-- <script src="static/lib/easing/easing.min.js"></script> -->
+  <!--<script src="/static/lib/superfish/hoverIntent.js"></script>-->
+  <!-- <script src="static/lib/superfish/superfish.min.js"></script>
+  <script src="static/lib/wow/wow.min.js"></script>
+  <script src="static/lib/waypoints/waypoints.min.js"></script>
+  <script src="static/lib/counterup/counterup.min.js"></script>
+  <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="static/lib/isotope/isotope.pkgd.min.js"></script> -->
+  <!--<script src="/static/lib/lightbox/js/lightbox.min.js"></script>-->
+  <!-- <script src="static/lib/touchSwipe/jquery.touchSwipe.min.js"></script> -->
+
+  <!-- Template Main Javascript File -->
+  <script src="{{url_for('static',filename='lib/easing/easing.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/counterup/counterup.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/isotope/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/lightbox/js/lightbox.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/waypoints/waypoints.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/wow/wow.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static',filename='ext/js/main.js')}}"></script>
+
+</body>
+
+<!-- Mirrored from www.samudramanthan.in/events by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Apr 2020 19:27:37 GMT -->
+
+</html>
