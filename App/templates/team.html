@@ -15,8 +15,8 @@
   <title>Team Samudramanthan</title>
 
 
-  <link href="static/img/logo.png" rel="icon">
-  <link href="static/img/logo.png" rel="apple-touch-icon">
+  <link href="{{url_for('static',filename='img/logo.png')}}" rel="icon">
+  <link href="{{url_for('static',filename='img/logo.png')}}" rel="apple-touch-icon">
 
   <!-- Libraries CSS Files -->
   <link href="static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -86,22 +86,37 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact Us
-              </a></li>
-            <li><a href="events.html">Events</a></li>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
+            <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
+            <li><a href="{{url_for('events')}}">Events</a></li>
+            <li><a href="{{url_for('signup')}}">Register</a></li>
+            <li><a href="{{url_for('index',_anchor='Our-sponsors')}}" target="_blank">sponsors</a></li>
+            {% if logged_in %}
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+            {% else %}
+            <li><a href="{{url_for('login')}}">Log in</a></li>
+            {%endif%}
+              <!--             <div style='background: lightblue; border-radius: 15px;' class="dropdown-content"> -->
+              <!-- <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal1">Data Tussle</a> -->
+              <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal2">BeyondQ</a> -->
+              <!-- <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal3">Numerical Battle</a> -->
+              <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal4">BoatExpo</a> -->
+              <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal5">Ace Analytics</a> -->
+              <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal6">Paper Presentation</a>
+                <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal7">Innotect</a>
+                <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal8">Oceania Quiz</a>
+                <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal9">Lensation</a>
+                <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal10">Poster Hunt</a> -->
+              <!--             </div> -->
+            
             <!-- <li><a href="https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=5e4e7545e4b0bf8415cfebe1" target="_blank">S2i2</a></li> -->
-
-            <li><a href="index.html#Our-sponsors" target="_blank">Sponsors</a></li>
-            <li><a href="team.html">Team</a></li>
-
-            <li><a href="gallery.html">Gallery</a></li>
-            <!-- <li><a class="menu-active" href="results/index.html"> Results  </a></li> -->
-
-            <li><a href="registration.html">
-                Register
-              </a></li>
+  
+  
+  
+            <li><a href="{{url_for('team')}}">Team</a></li>
+            <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+            <!-- <li><a class="menu-active" href="results/index.html"> Results </a></li> -->
 
 
 
@@ -132,7 +147,7 @@
           <div class="carousel-content">
             <div class="">
               <div class="text-center">
-                <img style="width: 200px;height: 240px; border-radius: 20%;" class="carousel-person-image" src="static/assets/images/team-2.jpg" alt="Prof. Hari V. Warrior">
+                <img style="width: 200px;height: 240px; border-radius: 20%;" class="carousel-person-image" src="{{url_for('static',filename='assets/images/team-2.jpg')}}" alt="Prof. Hari V. Warrior">
                 <h4 id="colored">Prof. Hari V. Warrior</h4>
                 <h4 id='colored'>Head of department</h4>
                 <h4 id="colored" style="padding-bottom: 40px">Ocean Engineering and Naval Architecture</h4>
@@ -146,7 +161,7 @@
           <div class="carousel-content">
             <div class="">
               <div class="text-center">
-                <img style="width: 200px;height: 240px; border-radius: 20%;" class="carousel-person-image" src="static/assets/images/team.jpg" alt="Prof. Ritwik Ghoshal">
+                <img style="width: 200px;height: 240px; border-radius: 20%;" class="carousel-person-image" src="{{url_for('static',filename='assets/images/team.jpg')}}" alt="Prof. Ritwik Ghoshal">
                 <h4 id="colored">Prof. Ritwik Ghoshal</h4>
                 <h4 id="colored" style="padding-bottom: 40px">NAROES Advisor</h4>
 
@@ -163,12 +178,12 @@
     <div class="container">
       <div class="page-section">
         <h2 class="page-section__title">OUR CORE TEAM</h2>
-        <img class="page-section__title-style" src="static/assets/images/title-style.png" alt="">
+        <img class="page-section__title-style" src="{{url_for('static',filename='assets/images/title-style.png')}}" alt="">
         <div class="row gutters-40">
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/WhatsApp_Image_2020-02-07_at_11.24.57_AM.jpg" alt="Ajay Menon">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/WhatsApp_Image_2020-02-07_at_11.24.57_AM.jpg')}}" alt="Ajay Menon">
               <h4 class="team__single-section__name">Ajay Menon</h4>
               <p class="team__single-section__title">President - NAROES</p>
 
@@ -187,7 +202,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/yasaswini.jpg" alt="Yasaswini Surisetty">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/yasaswini.jpg')}}" alt="Yasaswini Surisetty">
               <h4 class="team__single-section__name">Yasaswini Surisetty</h4>
               <p class="team__single-section__title">Advisor</p>
 
@@ -206,7 +221,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/ayush.jpg" alt="Ayush Saxena">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/ayush.jpg')}}" alt="Ayush Saxena">
               <h4 class="team__single-section__name">Ayush Saxena</h4>
               <p class="team__single-section__title">Events Head</p>
 
@@ -225,7 +240,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/hc.jpg" alt="Harshal Chimankar">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/hc.jpg')}}" alt="Harshal Chimankar">
               <h4 class="team__single-section__name">Harshal Chimankar</h4>
               <p class="team__single-section__title">Design Head</p>
 
@@ -244,7 +259,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/anurag.jfif" alt="Anurag Singh">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/anurag.jfif')}}" alt="Anurag Singh">
               <h4 class="team__single-section__name">Anurag Singh</h4>
               <p class="team__single-section__title">Web-D Head</p>
 
@@ -262,7 +277,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/ac.jpg" alt="Akash Chandra">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/ac.jpg')}}" alt="Akash Chandra">
               <h4 class="team__single-section__name">Akash Chandra</h4>
               <p class="team__single-section__title">Finance Head</p>
 
@@ -281,7 +296,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/subhankar.jpg" alt="Subhankar Halder">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/subhankar.jpg')}}" alt="Subhankar Halder">
               <h4 class="team__single-section__name">Subhankar Halder</h4>
               <p class="team__single-section__title">Development Head</p>
 
@@ -300,7 +315,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/Kolkunda Naveen Reddy.jpg" alt="Kolkunda Naveen Reddy">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/Kolkunda Naveen Reddy.jpg')}}" alt="Kolkunda Naveen Reddy">
               <h4 class="team__single-section__name">Kolkunda Naveen Reddy</h4>
               <p class="team__single-section__title">Development Head</p>
 
@@ -320,7 +335,7 @@
           
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/vishrut.jpg" alt="Vishrut Sharma">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/vishrut.jpg')}}" alt="Vishrut Sharma">
               <h4 class="team__single-section__name">Vishrut Sharma</h4>
               <p class="team__single-section__title">General Secretary</p>
 
@@ -339,7 +354,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/fahad.jpg" alt="Fahad P P">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/fahad.jpg')}}" alt="Fahad P P">
               <h4 class="team__single-section__name">Fahad P P</h4>
               <p class="team__single-section__title">General Secretary And Head of Sponsorship</p>
 
@@ -358,7 +373,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/kk.jpg" alt="Kavita Kakar">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/kk.jpg')}}" alt="Kavita Kakar">
               <h4 class="team__single-section__name">Kavita Kakar</h4>
               <p class="team__single-section__title">General Secretary</p>
 
@@ -377,7 +392,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/hari.jpg" alt="Hari G">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/hari.jpg')}}" alt="Hari G">
               <h4 class="team__single-section__name">Hari G</h4>
               <p class="team__single-section__title">General Secretary</p>
 
@@ -396,7 +411,7 @@
           <!-- ######### -->
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/51BA1EEC-F762-45A2-8F7C-0B3F4F4F1371---Lavesh-Kasodekar.jpg" alt="Lavesh Kasodekar">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/51BA1EEC-F762-45A2-8F7C-0B3F4F4F1371---Lavesh-Kasodekar.jpg')}}" alt="Lavesh Kasodekar">
               <h4 class="team__single-section__name">Lavesh Kasodekar</h4>
               <p class="team__single-section__title">Core Sub-head</p>
 
@@ -415,7 +430,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/SaahilDhar.jpg" alt="Saahil Dhar">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/SaahilDhar.jpg')}}" alt="Saahil Dhar">
               <h4 class="team__single-section__name">Saahil Dhar</h4>
               <p class="team__single-section__title">Core Sub-head</p>
 
@@ -434,7 +449,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/IMG_20211204_221803 - Aditya sahil Innovation Generation.jpg" alt="Aditya Mohite">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/IMG_20211204_221803 - Aditya sahil Innovation Generation.jpg')}}" alt="Aditya Mohite">
               <h4 class="team__single-section__name">Aditya Mohite</h4>
               <p class="team__single-section__title">Core Sub-head</p>
 
@@ -453,7 +468,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/IMG_20211204_172150 - Ayush Lohani.jpg" alt="Ayush Lohani">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/IMG_20211204_172150 - Ayush Lohani.jpg')}}" alt="Ayush Lohani">
               <h4 class="team__single-section__name">Ayush Lohani</h4>
               <p class="team__single-section__title">Design Sub-Head</p>
 
@@ -472,7 +487,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/anushka.jpg" alt="Anushka Jha">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/anushka.jpg')}}" alt="Anushka Jha">
               <h4 class="team__single-section__name">Anushka Jha</h4>
               <p class="team__single-section__title">Web Sub-Head</p>
 
@@ -491,7 +506,7 @@
 
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
-              <img style="width: 250px; height: 300px;" class="img-responsive" src="media/IMG_2057.jpg" alt="Sanjit Jeevanand">
+              <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/IMG_2057.jpg')}}" alt="Sanjit Jeevanand">
               <h4 class="team__single-section__name">Sanjit Jeevanand</h4>
               <p class="team__single-section__title">Web Sub-Head</p>
 
@@ -549,12 +564,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="index.html">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="events.html">Events</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="sponsors.html">Sponsors</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="index.html#contact">Contact Us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="team.html">Our Team</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="gallery.html">Gallery</a></li>
+               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index')}}">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('events')}}">Events</a></li>
+              
 
 
             </ul>
@@ -569,7 +581,7 @@
               721302<br>
               Kharagpur, West Bengal<br>
 
-              <strong>Email:</strong> <a href="mailto:samudramanthan.iitkgp.2021@gmail.com" style="text-decoration: none;">samudramanthan.iitkgp.2021@gmail.com</a><br>
+              <strong>Email:</strong> <a href="mailto:samudramanthan.iitkgp.2021@gmail.com" style="text-decoration: none;">samudramanthan.iitkgp.2022@gmail.com</a><br>
             </p>
 
             <div class="social-links">
