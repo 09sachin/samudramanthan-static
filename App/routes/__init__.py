@@ -1,1 +1,1 @@
-from . import index,login,register,events,teams,gallery,sponsor,logout
+from . import index,login,register,events,teams,gallery,sponsor,logout,signup

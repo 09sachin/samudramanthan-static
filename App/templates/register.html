@@ -10,7 +10,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
-	<div class="sidenav">
+	<!-- <div class="sidenav">
 		<div class="login-main-text">
 		   <h2>Application<br> Login Page</h2>
 		   <p>Login or register from here to access.</p>
@@ -45,9 +45,75 @@
 			  </form>
 		   </div>
 		</div>
-	 </div>
-	 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+	 </div> -->
+
+	 <section class="h-100 gradient-form" style="background-color: #eee;">
+	 	<div class="container py-5">
+	 		<div class="row d-flex justify-content-center align-items-center">
+	 			<div class="col-xl-10">
+	 				<div class="card rounded-3 text-black">
+	 					<div class="row g-0">
+	 						<div class="col-lg-6">
+	 							<div class="card-body p-md-5 mx-md-4">
+
+	 								<div class="text-center">
+	 									<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo">
+	 									<h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+	 								</div>
+
+	 								<form method="post" action="{{url_for('register')}}">
+	 									<p>Register your account</p>
+										<div class="form-outline mb-4">
+											<label class="form-label">Full Name</label>
+											<input id="username" type="text" class="form-control" placeholder="Full Name" name="name"/>
+											<p id="umsg" style="color: red;"></p>
+										</div>
+
+	 									<div class="form-outline mb-4">
+	 										<label class="form-label">Email</label>
+	 										<input id="email" type="email" class="form-control" placeholder="Email address" name="email" />
+	 										<p id="emsg" style="color: red;"></p>
+
+	 									</div>
+
+	 									<div class="form-outline mb-4">
+	 										<label class="form-label">Password</label>
+	 										<input type="password" placeholder="password" class="form-control" name="password"  id="password"/>
+	 										<p id="pmsg" style="color: red;"></p>
+	 									</div>
+
+										<div class="form-outline mb-4">
+											<label class="form-label">Confirm Password</label>
+											<input type="password" placeholder="Re-enter password" class="form-control" id="password2" />
+											<p id="cpmsg" style="color: red;"></p>
+										</div>
+
+										<button type="submit" class="btn btn-primary" style="width: 100%">Sign up</button>
+
+	 									<div class="d-flex align-items-center justify-content-center pb-4">
+	 										<p>Already have an account ? <a href="{{url_for('login')}}" style="text-decoration: none;">Sign in</a></p>
+	 									</div>
+
+	 								</form>
+
+	 							</div>
+	 						</div>
+	 						<div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+	 							<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+	 								<h4 class="mb-4">We are more than just a company</h4>
+	 								<p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+	 									ea commodo consequat.</p>
+	 							</div>
+	 						</div>
+	 					</div>
+	 				</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </section>
+
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="{{url_for('static',filename='js/form.js')}}"></script>
 </body>
 </html>
