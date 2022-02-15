@@ -16,6 +16,8 @@
 
   <link href="{{url_for('static',filename='img/logo.png')}}" rel="icon">
   <link href="{{url_for('static',filename='img/logo.png')}}" rel="apple-touch-icon">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/nav.css')}}">
+  <script src="https://kit.fontawesome.com/13dade90ec.js" crossorigin="anonymous"></script>
 
   <style>
     .footer {
@@ -259,35 +261,33 @@
     Header
   ============================-->
   <header id="header">
-    <div class="container-fluid">
-
-      <div id="logo" class="pull-left">
-
-
+    <nav class="rnav">
+      <div class="rbrand">
         <a href="{{url_for('index')}}"><img src="{{url_for('static',filename='img/logo.png')}}" alt="" title="" /></a>
       </div>
-
-      <nav id="nav-menu-container">
+      <label for="rckick" class="rtoggle" style="color: black;">
+        <i class="fas fa-solid fa-bars"></i>
+      </label>
+      <input type="checkbox" id="rclick" hidden>
+      <div class="rnav-links">
         <ul class="nav-menu">
           <li><a href="{{url_for('index')}}">Home</a></li>
           <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
           <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
           <li><a href="{{url_for('events')}}">Events</a></li>
-          <!-- <li><a href="https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=5e4e7545e4b0bf8415cfebe1" target="_blank">S2i2</a></li> -->
-          {% if user %}
+          <li><a href="{{url_for('signup')}}">Register</a></li>
+          <li><a href="{{url_for('sponsor')}}">sponsors</a></li>
+          <li><a href="{{url_for('team')}}">Team</a></li>
+          {% if logged_in %}
+          <li><a href="{{url_for('signup')}}">Payments</a></li>
           <li><a href="{{url_for('logout')}}">Log out</a></li>
           {% else %}
+          <li><a href="{{url_for('register')}}">Register</a></li>
           <li><a href="{{url_for('login')}}">Log in</a></li>
           {%endif%}
-
-          <!-- <li><a href="{{url_for('team')}}">Team</a></li>
-          <li><a href="{{url_for('gallery')}}">Gallery</a></li> -->
-          <!-- <li><a class="menu-active" href="results/index.html"> Results </a></li> -->
-
-
         </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
+      </div>
+    </nav>
   </header><!-- #header -->
 
   <main id="main">
@@ -305,6 +305,13 @@ background: linear-gradient(to right, #185a9d, #43cea2); "> -->
             <h1
               style="text-align: center; color: black; font-family: Helvetica,sans-serif; margin: 50px 0; font-weight: bolder; ">
               OUR EVENTS</h1>
+              {% with messeges=get_flashed_messages() %}
+              {% if messeges %}
+              {%for msg in messeges %}
+              <p style="text-align: center; color: black; font-family: Helvetica,sans-serif; margin: 50px 0; font-weight: bolder;">{{msg}}</p>
+              {% endfor %}
+              {%endif%}
+              {%endwith%}
           </div>
         </div>
 
@@ -350,18 +357,18 @@ background: linear-gradient(to right, #185a9d, #43cea2); "> -->
       </div>
       <p style="text-align: center; margin-top:4vh; margin-bottom: 4vh; text-transform: uppercase;"
         class="small-devices-div"><button class="btn btn-lg btn-success"><a style="color: #fff;"
-            href="files/Info Brochure_BeyondQ_SM21.pdf" target="_blank" rel="noopener noreferrer">Rules</a></button>
+            href="{{event.link}}" target="_blank" rel="noopener noreferrer">Rules</a></button>
 
             {%if user== None%}
             <button class="btn btn-lg btn-success" disabled>Register</button>
             <div style="text-align: justify; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
-              You need to login first to register for an event.
+              You need to login first to register for an event. Go to <a href="{{url_for('login')}}">Log in</a>.            
             </div>
             {% else %}
             {% if user.paid== True %}
             {%if event.id in participated%}
             <button class="btn btn-lg btn-success" disabled>Register</button>
-            <div style="text-align: justify; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
+            <div style="text-align: center; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
               Your participation is added.
             </div>
             {%else%}
@@ -371,7 +378,7 @@ background: linear-gradient(to right, #185a9d, #43cea2); "> -->
             {%else%}
             <button class="btn btn-lg btn-success register" disabled>Register</button>
             <div style="text-align: justify; color: black;padding-left: 15px; padding-right: 15px;" class="small-devices-div">
-              Your payment hasn't been confirmed yet. If it's been more than 8 hours since you paid then you can contact us at:
+              Your payment hasn't been confirmed yet. You can pay us <a href="{{url_for('signup')}}">here</a> <br> If it's been more than 8 hours since you paid then you can contact us at: 
               <strong>naroes.iitkgp.2022@gmail.com</strong>
             </div>
             {%endif%}
@@ -472,6 +479,7 @@ background: linear-gradient(to right, #185a9d, #43cea2); "> -->
   <!-- <script src="static/lib/touchSwipe/jquery.touchSwipe.min.js"></script> -->
 
   <!-- Template Main Javascript File -->
+  <script src="{{url_for('static',filename='js/nav.js')}}"></script>
   <script src="{{url_for('static',filename='lib/easing/easing.min.js')}}"></script>
   <script src="{{url_for('static',filename='lib/superfish/superfish.min.js')}}"></script>
   <script src="{{url_for('static',filename='lib/counterup/counterup.min.js')}}"></script>

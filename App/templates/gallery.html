@@ -102,27 +102,24 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#contact">Contact Us</a></li>
-          <li><a href="events.html">Events</a></li>
-          <!-- <li><a href="https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=5e4e7545e4b0bf8415cfebe1" target="_blank">S2i2</a></li> -->
-
-          <li><a href="index.html#Our-sponsors" target="_blank">sponsors</a></li>
-
-          <li><a href="team.html">Team</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="{{url_for('index')}}">Home</a></li>
+          <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
+          <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
+          <li><a href="{{url_for('events')}}">Events</a></li>
+          <li><a href="{{url_for('signup')}}">Register</a></li>
+          <li><a href="{{url_for('sponsor')}}">sponsors</a></li>
+          <li><a href="{{url_for('team')}}">Team</a></li>
+          {% if logged_in %}
+          <li><a href="{{url_for('signup')}}">Payments</a></li>
+          <li><a href="{{url_for('logout')}}">Log out</a></li>
+          {% else %}
+          <li><a href="{{url_for('register')}}">Register</a></li>
+          <li><a href="{{url_for('login')}}">Log in</a></li>
+          {%endif%}
           <!--
                    <li><a href="register/login/index.html">
                       Accomodation
                   </a></li> -->
-
-
-          <li><a href="registration.html">
-              Register
-            </a></li>
-
-
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>

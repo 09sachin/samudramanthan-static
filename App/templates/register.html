@@ -8,6 +8,8 @@
 	<!-- CSS only -->
 <link rel="stylesheet" href="{{url_for('static',filename='css/form.css')}}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="{{url_for('static',filename='img/logo.png')}}" rel="icon">
+<link href="{{url_for('static',filename='img/logo.png')}}" rel="apple-touch-icon">
 </head>
 <body>
 	<!-- <div class="sidenav">
@@ -63,6 +65,7 @@
 
 	 								<form method="post" action="{{url_for('register')}}">
 	 									<p>Register your account</p>
+										 <p style="color: red;">{{msg}}</p>
 										<div class="form-outline mb-4">
 											<label class="form-label">Full Name</label>
 											<input id="username" type="text" class="form-control" placeholder="Full Name" name="name"/>

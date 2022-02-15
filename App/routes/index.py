@@ -1,6 +1,9 @@
 from .. import app
-from flask import render_template,request
+from flask import redirect, render_template,request, url_for
 from ..utils.jwt import JWT
+@app.route("/")
+def home():
+    return redirect(url_for('index'))
 @app.route("/home")
 def index():
     token=request.cookies.get("token")

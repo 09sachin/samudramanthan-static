@@ -456,6 +456,8 @@
 
   <!-- Main Stylesheet File -->
   <link href="{{url_for('static',filename='ext/css/style.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/nav.css')}}">
+  <script src="https://kit.fontawesome.com/13dade90ec.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -502,56 +504,33 @@
     Header
   ============================-->
   <header id="header">
-    <div class="container-fluid">
-
-      <div id="logo" class="pull-left" style="margin-top: -12px">
-
-
-        <a href="#intro"><img src="{{url_for('static',filename='img/logo.png')}}" alt="" title="" /></a>
+    <nav class="rnav">
+      <div class="rbrand">
+        <a href="{{url_for('index')}}"><img src="{{url_for('static',filename='img/logo.png')}}" alt="" title="" /></a>
       </div>
-
-      <nav id="nav-menu-container">
+      <label for="rckick" class="rtoggle" style="color: black;">
+        <i class="fas fa-solid fa-bars"></i>
+      </label>
+      <input type="checkbox" id="rclick" hidden>
+      <div class="rnav-links">
         <ul class="nav-menu">
           <li><a href="{{url_for('index')}}">Home</a></li>
           <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
           <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
           <li><a href="{{url_for('events')}}">Events</a></li>
           <li><a href="{{url_for('signup')}}">Register</a></li>
-          <li><a href="{{url_for('index',_anchor='Our-sponsors')}}" target="_blank">sponsors</a></li>
+          <li><a href="{{url_for('sponsor')}}">sponsors</a></li>
+          <li><a href="{{url_for('team')}}">Team</a></li>
           {% if logged_in %}
+          <li><a href="{{url_for('signup')}}">Payments</a></li>
           <li><a href="{{url_for('logout')}}">Log out</a></li>
           {% else %}
+          <li><a href="{{url_for('register')}}">Register</a></li>
           <li><a href="{{url_for('login')}}">Log in</a></li>
           {%endif%}
-            <!--             <div style='background: lightblue; border-radius: 15px;' class="dropdown-content"> -->
-            <!-- <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal1">Data Tussle</a> -->
-            <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal2">BeyondQ</a> -->
-            <!-- <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal3">Numerical Battle</a> -->
-            <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal4">BoatExpo</a> -->
-            <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal5">Ace Analytics</a> -->
-            <!--               <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal6">Paper Presentation</a>
-              <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal7">Innotect</a>
-              <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal8">Oceania Quiz</a>
-              <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal9">Lensation</a>
-              <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal10">Poster Hunt</a> -->
-            <!--             </div> -->
-          </li>
-          <!-- <li><a href="https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=5e4e7545e4b0bf8415cfebe1" target="_blank">S2i2</a></li> -->
-
-
-
-          <li><a href="{{url_for('team')}}">Team</a></li>
-          <li><a href="{{url_for('gallery')}}">Gallery</a></li>
-          <!-- <li><a class="menu-active" href="results/index.html"> Results </a></li> -->
-
-
-
-
         </ul>
-
-      </nav><!-- #nav-menu-container -->
-    </div>
-
+      </div>
+    </nav>
   </header>
   <!-- #header -->
 
@@ -570,7 +549,7 @@
         <div style="margin-left: 48%;width: fit-content;width: -moz-fit-content; margin-top: 7%;">
 
 
-          <a href='index.html#about'><img class='vibe' style='width:35%' src="{{url_for('static',filename='an1.png')}}"></a>
+          <a href="{{url_for('index',_anchor='about')}}"><img class='vibe' style='width:35%' src="{{url_for('static',filename='an1.png')}}"></a>
         </div>
 
       </div>
@@ -1223,6 +1202,7 @@
 
 
   <!-- Template Main Javascript File -->
+  <script src="{{url_for('static',filename='js/nav.js')}}"></script>
   <script src="{{url_for('static',filename='lib/easing/easing.min.js')}}"></script>
   <script src="{{url_for('static',filename='lib/superfish/superfish.min.js')}}"></script>
   <script src="{{url_for('static',filename='lib/counterup/counterup.min.js')}}"></script>

@@ -1,0 +1,54 @@
+.rnav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rbrand{
+    margin-left: 3%;
+}
+.rnav-links ul{
+    display: flex;
+}
+.rnav-links{
+    padding-right:5%;
+}
+.rtoggle{
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    display: none;
+}
+@media (max-width:900px) {
+    .rtoggle{
+        display: block;
+    }
+    .rnav-links{
+        display: none;
+    }
+    .rnav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .rnav-links{
+        width: 100%;
+    }
+    .rnav-links ul{
+        background-color: black;
+        opacity: 0.8;
+        flex-direction: column;
+        width: 100%;
+    }
+    .rnav-links li{
+        text-align: center;
+    }
+    .rnav-links li a{
+        color: white;
+    }
+    #rclick:checked ~ .rnav-links{
+        display: block;
+
+    }
+    .rtoggle .active{
+        top:.5rem;
+    }
+}

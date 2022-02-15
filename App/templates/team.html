@@ -82,7 +82,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"></a>
+          <a class="navbar-brand" href="{{url_for('index')}}"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
@@ -90,12 +90,14 @@
             <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
             <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
             <li><a href="{{url_for('events')}}">Events</a></li>
-            <li><a href="{{url_for('signup')}}">Register</a></li>
-            <li><a href="{{url_for('index',_anchor='Our-sponsors')}}" target="_blank">sponsors</a></li>
+            <li><a href="{{url_for('sponsor')}}">sponsors</a></li>
+            <li><a href="{{url_for('team')}}">Team</a></li>
             {% if logged_in %}
+            <li><a href="{{url_for('signup')}}">Payment</a></li>
             <li><a href="{{url_for('logout')}}">Log out</a></li>
             {% else %}
             <li><a href="{{url_for('login')}}">Log in</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
             {%endif%}
               <!--             <div style='background: lightblue; border-radius: 15px;' class="dropdown-content"> -->
               <!-- <a style='color: black; display: block; padding-top: 8px;' href="events.html#gal1">Data Tussle</a> -->
@@ -112,10 +114,6 @@
             
             <!-- <li><a href="https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=5e4e7545e4b0bf8415cfebe1" target="_blank">S2i2</a></li> -->
   
-  
-  
-            <li><a href="{{url_for('team')}}">Team</a></li>
-            <li><a href="{{url_for('gallery')}}">Gallery</a></li>
             <!-- <li><a class="menu-active" href="results/index.html"> Results </a></li> -->
 
 
@@ -408,7 +406,6 @@
               </div>
             </div>
           </div>
-          <!-- ######### -->
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
               <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/51BA1EEC-F762-45A2-8F7C-0B3F4F4F1371---Lavesh-Kasodekar.jpg')}}" alt="Lavesh Kasodekar">
@@ -446,7 +443,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-md-6 col-lg-3">
             <div class="thumbnail ">
               <img style="width: 250px; height: 300px;" class="img-responsive" src="{{url_for('static',filename='media/team/IMG_20211204_221803 - Aditya sahil Innovation Generation.jpg')}}" alt="Aditya Mohite">
@@ -564,8 +560,11 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index')}}">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index')}}">Home</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('events')}}">Events</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('sponsor')}}">Sponsors</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('team')}}">Our Team</a></li>
               
 
 
@@ -617,10 +616,19 @@
     </div>
   </footer><!-- #footer -->
 
-  <script src="static/assets/jquery/jquery-3.2.1.min.js"></script>
-  <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="static/js/mixitup.js"></script>
-
+  <script src="{{url_for('static',filename='lib/easing/easing.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/counterup/counterup.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/isotope/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/lightbox/js/lightbox.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/waypoints/waypoints.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/wow/wow.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static',filename='ext/js/main.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
   <script>
     // calling mixitup
     var mixer = mixitup(".portfolio");

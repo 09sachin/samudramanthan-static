@@ -9,6 +9,8 @@
 	<!-- CSS only -->
 	<link rel="stylesheet" href="{{url_for('static',filename='css/form.css')}}">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="{{url_for('static',filename='img/logo.png')}}" rel="icon">
+	<link href="{{url_for('static',filename='img/logo.png')}}" rel="apple-touch-icon">
 </head>
 
 <body>
@@ -51,8 +53,14 @@
 										<img src="{{url_for('static',filename='img/sm logo.png')}}" style="width: 185px;" alt="logo">
 										<h4 class="mt-1 mb-5 pb-1">Samudra Manthan</h4>
 									</div>
-
 									<form method="post" action="{{url_for('login')}}">
+										{% with messeges=get_flashed_messages() %}
+										{% if messeges %}
+										{%for msg in messeges %}
+										<p>{{msg}}</p>
+										{% endfor %}
+										{%endif%}
+										{%endwith%}
 										<p>Please login to your account</p>
 										<p style="color: red;">{{msg}}</p>
 										<div class="form-outline mb-4">
@@ -70,9 +78,9 @@
 
 										<div class="text-center pt-1 mb-5 pb-1">
 											<button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log in</button>
-											<a class="text-muted" href="javascript:void(0)" onClick="alert('Please drop us an email on samudramanthan.iitkgp.2022@gmail.com and we will resolve the issue from our side!')">Forgot password?</a>
+											<a class="text-muted" href="javascript:void(0)" onClick="forgot()">Forgot password?</a>
+											<p id="forgot" hidden>Please contact <strong>samudramanthan.iitkgp.2022@gmail</strong> with your registered email.</p>
 										</div>
-
 										<div class="d-flex align-items-center justify-content-center pb-4">
 											<p class="mb-0 me-2" style="margin-right: 4px">Don't have an account? </p>
 											<a href="{{url_for('register')}}"><button type="button" class="btn btn-outline-danger">Create new</button></a>
@@ -98,6 +106,12 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="{{url_for('static',filename='js/login.js')}}"></script>
+	<script>
+		function forgot(){
+			ele=document.getElementById("forgot");
+			ele.hidden=false;			
+		}
+	</script>
 </body>
 
 </html>

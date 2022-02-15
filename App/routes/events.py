@@ -9,12 +9,14 @@ def events():
     token_data=JWT.validator(token)
     participated=[]
     user=None
+    logged_in=False
     if token_data:
+        logged_in=True
         user=User.query.get(int(token_data["user"]))
         for event in user.events_participated:
             participated.append(event.id)
     all_events=Event.query.all()
-    return render_template("events.html",all_events=all_events,participated=participated,user=user)
+    return render_template("events.html",all_events=all_events,participated=participated,user=user,logged_in=logged_in)
 @app.route("/event/participate")
 def event_participation():
     token=request.cookies.get("token")
@@ -26,7 +28,6 @@ def event_participation():
             event=Event.query.get(int(event_id))
             event.participants.append(user)
             db.session.commit()
-            print(f"Participation added for {user.name} ")
             return redirect(url_for('events',_anchor=event_id))
         print("This happened")
         return redirect(url_for('events',_anchor=event_id))
