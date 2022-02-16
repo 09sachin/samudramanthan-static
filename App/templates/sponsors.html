@@ -164,9 +164,7 @@ h7{
           <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
           <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
           <li><a href="{{url_for('events')}}">Events</a></li>
-          <li><a href="{{url_for('signup')}}">Register</a></li>
-          <li><a href="{{url_for('sponsor')}}">sponsors</a></li>
-          <li><a href="{{url_for('team')}}">Team</a></li>
+          <li><a href="{{url_for('sponsor')}}">Sponsors</a></li>
           {% if logged_in %}
           <li><a href="{{url_for('signup')}}">Payments</a></li>
           <li><a href="{{url_for('logout')}}">Log out</a></li>
@@ -262,7 +260,6 @@ h7{
               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('events')}}">Events</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('sponsor')}}">Sponsors</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('team')}}">Our Team</a></li>
 
 
             </ul>

@@ -437,6 +437,9 @@
   padding:10px;
 
 }
+#contact_h h3::after{
+ display: none;
+}
   </style>
 
   <!-- Google Fonts -->
@@ -518,9 +521,7 @@
           <li><a href="{{url_for('index',_anchor='about')}}">About</a></li>
           <li><a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
           <li><a href="{{url_for('events')}}">Events</a></li>
-          <li><a href="{{url_for('signup')}}">Register</a></li>
-          <li><a href="{{url_for('sponsor')}}">sponsors</a></li>
-          <li><a href="{{url_for('team')}}">Team</a></li>
+          <li><a href="{{url_for('sponsor')}}">Sponsors</a></li>
           {% if logged_in %}
           <li><a href="{{url_for('signup')}}">Payments</a></li>
           <li><a href="{{url_for('logout')}}">Log out</a></li>
@@ -981,148 +982,47 @@
   <!--==========================
       Contact Section
     ============================-->
-  <section id="contact" class="section-bg wow" style="background: url(../static/bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;">
+  <section id="contact" class="section-bg wow">
     <div class="container">
 
-      <div class="section-header">
+      <div class="section-header" id="contact_h">
         <h3 style="color: #000;">Contact Us</h3>
       </div>
 
-      <div class="row contact-info">
+      <div class="row contact-info" style="justify-content: center;">
 
-        <!--          <div class="col-md-4">-->
-        <!--            <div class="contact-address">-->
-        <!--              <i class="ion-ios-location-outline"></i>-->
-        <!--              <h3>Address</h3>-->
-        <!--              <address style="text-align: center">Department of-->
-        <!--Ocean Engineering & <br>Naval architecture,-->
-        <!--IIT Kharagpur<br>-->
-        <!--721302-->
-        <!--Kharagpur, West Bengal</address>-->
-        <!--            </div>-->
-        <!--          </div>-->
+                 <div class="col-md-4">
+                   <div class="contact-address">
+                    <i class="fas fa-solid fa-map" style="color: #6c757d;"></i>
+                     <h3>Address</h3>
+                     <address style="text-align: center">Department of
+        Ocean Engineering & <br>Naval architecture,
+        IIT Kharagpur<br>
+        721302
+        Kharagpur, West Bengal</address>
+                   </div>
+                 </div>
 
-        <!--          <div class="col-md-4">-->
-        <!--            <div class="contact-phone">-->
-        <!--              <i class="fa fa-facebook-f"></i>-->
-        <!--              <h3>Facebook</h3>-->
-        <!--              <p><a href="tel:+155895548855">Samudramanthan</a></p>-->
-        <!--            </div>-->
-        <!--          </div>-->
+                 <!-- <div class="col-md-4">
+                   <div class="contact-phone">
+                     <i class="fas fa-solid fa-phone" style="color: #6c757d;"></i>
+                     <h3>Phone</h3>
+                     <p><a href="tel:+917598778227" onmouseover="myhover(this)" onmouseout="myhoverout(this)">Samudramanthan</a></p>
+                   </div>
+                 </div> -->
 
-        <!--          <div class="col-md-4">-->
-        <!--            <div class="contact-email">-->
-        <!--              <i class="ion-ios-email-outline"></i>-->
-        <!--              <h3>Email</h3>-->
-        <!--              <p><a href="mailto:info@example.com">samudramanthan.iitkgp.2021@gmail.com</a></p>-->
-        <!--            </div>-->
-        <!--          </div>-->
-
-      </div>
-
-
-
-      <div class="container">
-        <div class="form-background">
-
-
-
-
-          <div style="padding-top: 60px;  " class="container">
-
-
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-3 "></div>
-              <div class="col-sm-6 ">
-                <form method="post" action="mailto:samudramanthan.iitkgp.2022@gmail.com">
-                  <input type="hidden" name="csrfmiddlewaretoken" value="YnxAQ7l10TdcrFVdR6MmRBixt350FKOUoQsMuColyvSR9vdF78DIxCBcIeNeS2G3">
-
-
-
-                  <div id="div_id_name" class="form-group"> <label for="id_name" class=" requiredField" style="color: #000; font-weight: bolder;">
-                      Name<span class="asteriskField">*</span> </label>
-                    <div class=""> <input type="text" name="name" maxlength="250" class="textinput textInput form-control" required id="id_name"> </div>
-                  </div>
-                  <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField" style="color: #000; font-weight: bolder;">
-                      Email<span class="asteriskField">*</span> </label>
-                    <div class=""> <input type="text" name="email" maxlength="300" class="textinput textInput form-control" required id="id_email" style="color: #000; font-weight: bolder;"> </div>
-                  </div>
-                  <div id="div_id_subject" class="form-group"> <label for="id_subject" class=" requiredField" style="color: #000; font-weight: bolder;">
-                      Subject<span class="asteriskField">*</span> </label>
-                    <div class=""> <input type="text" name="subject" maxlength="400" class="textinput textInput form-control" required id="id_subject"> </div>
-                  </div>
-                  <div id="div_id_message" class="form-group"> <label for="id_message" class=" requiredField" style="color: #000; font-weight: bolder;">
-                      Message<span class="asteriskField">*</span> </label>
-                    <div class="">
-                      <textarea name="message" cols="40" rows="10" maxlength="10000" class="textarea form-control" required id="id_message"></textarea>
-                    </div>
-                    <div class="d-grid gap-2">
-                      <button class="btn btn-success" type="submit" style="margin-top: 1rem;">Submit</button>
-                    </div>
-                  </div>
-
-
-                  <!-- <div style="margin-top: 30px" class="text-center"><button style="width:100% ; color: navy; font-weight: bolder" type="submit">Submit</button></div> -->
-
-                </form>
-              </div>
-              <div class="col-sm-3 "></div>
-              <!--               <div class="col-sm-6 "> -->
-              <!--                 <h1 style='text-align:center;color:black'>How To Reach Us</h1> -->
-              <!-- <iframe width="600" height="200" frameborder="0" style="border:0"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBsMkAhjVDgzXn5SToGsAzs3tljqu0ez_g%20%20%20%20&amp;q=Dept+of+Ocean+Engg+%26+Naval+Architecture,+IIT+Kharagpur/@22.3203752,87.313616,18.63z/">
-                </iframe> -->
-              <!--                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.8701593430833!2d87.31276191474399!3d22.32074974779326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d441a4ce1b593%3A0x9601cb745798a81e!2sDept%20of%20Ocean%20Engg%20%26%20Naval%20Architecture%2C%20IIT%20Kharagpur!5e0!3m2!1sen!2sin!4v1613577759139!5m2!1sen!2sin"
-                  width="600" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
-              <!--<h3>By Air</h3>-->
-              <!--<p>The nearest airport to Kharagpur is the Netaji Subhas Chandra Bose International Airport, Kolkata. It is widely connected to almost all the major destinations of the country.</p>-->
-              <!--   <p>From Kolkata Airport you can take a taxi from the Airport taxi stand to Kharagpur. The travel time is approximately 2 1/2 hrs.</p>-->
-              <!--   <h3>By train</h3>-->
-              <!--   <p>Kharagpur is well connected to most major cities like Kolkata, Mumbai etc. by rail.-->
-              <!--   <br>From Kharagpur railway station, IIT is about 10 min drive.</p>-->
-
-              <!--   <p>Alternatively, you can reach the Howrah Railway station and take a local train to Kharagpur or book a cab .</p>-->
-              <!--                 <h4>Kolkata to IIT Campus</h4> -->
-              <!--                 <p>
-                  There is regular Express and Local (choice is yours) trains to Kharagpur from Howrah. It takes 2 hrs by an express train - Fare - Rs 60/- to 150/- depending on class and train type.
-                  The Institute is 5 km from Kharagpur railway station. (Kharagpur Rly stn.-IIT campus: Taxi fare Rs. 150 /-, Rickshaw Fare Rs. 60/-, Auto rickshaw Fare Rs.100/-)</p>
-                <h4>KGP-JN to IIT Campus</h4>
-                <p>There are regular Express and Local trains to Kharagpur junction from Howrah. It takes 2 hrs by an express train - Fare - Rs 60/- to 150/- depending on the class and train type. The Institute is 5 km from Kharagpur railway station.
-                  (Kharagpur Railway station - IIT campus: Taxi fare Rs. 150 /-, Rickshaw Fare Rs. 60/-, Auto rickshaw Fare Rs.100/-)
-                </p> -->
-              <!--               </div> -->
-            </div>
-          </div>
+                 <div class="col-md-4">
+                   <div class="contact-email">
+                     <i class="fas fa-solid fa-envelope" style="color: #6c757d;"></i>
+                     <h3>Email</h3>
+                     <p><a href="mailto:samudramanthan.iitkgp.2022@gmail.com" onmouseover="myhover(this)" onmouseout="myhoverout(this)">samudramanthan.iitkgp.2022@gmail.com</a></p>
+                   </div>
+                 </div>
         </div>
-      </div>
-
-
-
-
     </div>
   </section><!-- #contact -->
 
   </main>
-
-  <!--<div class="iphone-5" style="margin-bottom: 100px" ><h2 style="text-align: center; font-weight: bolder">Facebook updates</h2>-->
-  <!--<div style=" margin-bottom: 50px" class="fb-sm1">-->
-  <!--<div class="fb-page" data-href="https://www.facebook.com/samudramanthan.iitkgp/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/samudramanthan.iitkgp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/samudramanthan.iitkgp/">Facebook</a></blockquote></div>-->
-  <!--</div>-->
-  <!--<div class="fb-sm2">-->
-  <!--    -->
-  <!--<div  class="fb-post"  data-href="sachin09.iitkgp@gmail.com"  data-show-text="true"></div>-->
-  <!---->
-  <!--<div  class="fb-post"  data-href="sachinontop09@gmail.com"  data-show-text="true"></div>-->
-  <!---->
-  <!--</div>-->
-  <!--</div>-->
   <!--==========================
     Footer
   ============================-->
@@ -1136,6 +1036,8 @@
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index')}}">Home</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('events')}}">Events</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('sponsor')}}">Sponsors</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="{{url_for('index',_anchor='contact')}}">Contact Us</a></li>
             </ul>
           </div>
 
@@ -1202,6 +1104,15 @@
 
 
   <!-- Template Main Javascript File -->
+  <script>
+ function myhover(x){
+   x.style.color="#6c757d";
+ }
+ function myhoverout(x){
+   x.style.color="black"
+ }
+
+  </script>
   <script src="{{url_for('static',filename='js/nav.js')}}"></script>
   <script src="{{url_for('static',filename='lib/easing/easing.min.js')}}"></script>
   <script src="{{url_for('static',filename='lib/superfish/superfish.min.js')}}"></script>

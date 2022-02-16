@@ -66,6 +66,7 @@
 	 								<form method="post" action="{{url_for('register')}}">
 	 									<p>Register your account</p>
 										 <p style="color: red;">{{msg}}</p>
+										 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 										<div class="form-outline mb-4">
 											<label class="form-label">Full Name</label>
 											<input id="username" type="text" class="form-control" placeholder="Full Name" name="name"/>

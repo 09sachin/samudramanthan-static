@@ -63,11 +63,11 @@
 										{%endwith%}
 										<p>Please login to your account</p>
 										<p style="color: red;">{{msg}}</p>
+										<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 										<div class="form-outline mb-4">
 											<label class="form-label">Email</label>
 											<input type="email" class="form-control" placeholder="Email address" name="email" />
 											<p id="emsg" style="color: red;"></p>
-
 										</div>
 
 										<div class="form-outline mb-4">
