@@ -7,7 +7,7 @@ import bcrypt
 def register():
     if request.method=="GET":
         if JWT.validator(request.cookies.get("token")):
-            return url_for("index.html")
+            return url_for("index")
         return render_template("register.html",msg="")
     else:
         name=request.form["name"]
