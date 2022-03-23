@@ -1,1 +1,7 @@
 sites.db
+payments.xlsx
+payments.py
+event_links.json
+sm_id.py
+test.py
+Payments/*
