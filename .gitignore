@@ -5,3 +5,4 @@ event_links.json
 sm_id.py
 test.py
 Payments/*
+*/__pycache__/*
